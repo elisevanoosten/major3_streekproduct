@@ -1,14 +1,26 @@
 export default class Pers extends Phaser.State {
   create() {
-    this.background = this.game.add.sprite(0, 0, 'background')
-    // this.background = this.game.add.tileSprite(0, 0, 736, 736, 'spritesheet', 'tile19.jpg');
-    // this.wallTop = this.game.add.tileSprite(0, 0, 736, 32, 'spritesheet', 'tile20.jpg');
-    // this.wallLeft = this.game.add.tileSprite(0, 0, 32, 736, 'spritesheet', 'tile20.jpg');
-    // this.wallBottom = this.game.add.tileSprite(0, 736 - 32, 736, 32, 'spritesheet', 'tile20.jpg');
-    // this.wallRight = this.game.add.tileSprite(736 - 32, 0, 32, 736, 'spritesheet', 'tile20.jpg');
+    this.background = this.game.add.sprite(0, 0, 'background');
 
-    // this.logo = this.game.add.sprite(this.game.width / 2, this.game.height / 2, 'logo');
-    // this.logo.anchor.setTo(0.5, 0.5);
+    this.plaat = this.game.add.sprite(322, 366, '3_plaat');
+    this.potjes_rechts = this.game.add.sprite(494, 300, '3_potjes_rechts')
+    this.potjes_links = this.game.add.sprite(390, 310, '3_potjes_links')
+    this.pers_rechts = this.game.add.sprite(550, 100, '3_pers_rechts')
+    this.pers_links = this.game.add.sprite(423, 150, '3_pers_links')
+    this.bg = this.game.add.sprite(this.game.width/2, 250, '3_bg');
+    this.bg.anchor.setTo(0.5, 0.5);
+    
+
+    // console.log(this.pers_rechts);
+
+    this.pers_rechts.inputEnabled = true;
+    this.pers_links.inputEnabled = true;
+
+    this.pers_rechts.input.enableDrag();
+    this.pers_links.input.enableDrag();
+
+    this.pers_rechts.input.allowHorizontalDrag = false;
+    this.pers_links.input.allowHorizontalDrag = false;
 
     this.nextButton = this.game.add.button(this.game.width -30, 30, 'arrow', this.nextClick, this);
     this.nextButton.anchor.setTo(0.5, 0.5);
@@ -16,6 +28,12 @@ export default class Pers extends Phaser.State {
 
   nextClick() {
     console.log('klik Pers');
-    // this.game.state.start('Pers');
+    this.game.state.start('Rijpen');
+  }
+
+  render() {
+
+    // game.debug.inputInfo(32, 32);
+    // game.debug.spriteInputInfo(sprite, 300, 32);
   }
 }

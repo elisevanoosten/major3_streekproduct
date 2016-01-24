@@ -3,8 +3,186 @@
 
 body {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	// background-image: url('/assets/img/background.jpg');
+	background-image: url('/assets/img/background.jpg');
+	background-size: contain;
 }
+
+.nav-header, .center{
+	width: 1028px;
+	margin: 0 auto;
+}
+
+main{
+	min-height: 70vh;
+}
+
+
+/*   TOP NAVIGATIE    */
+
+.nav-header{
+	margin-top: 70px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo{
+	background-image: url('/assets/img/logo.png');
+	display: block;
+	width: 160px;
+	height: 158px;
+	>span{
+		display: none;
+	}
+}
+
+.nav-bar {
+	li{
+		display: inline;
+		font-family: "bebas", helvetica, sans-serif;
+		text-transform: uppercase;
+		font-size: 1.9em;
+	}
+	a{
+		text-decoration: none;
+		color: #b70d04;
+		padding: 10px 20px;
+	}
+}
+
+.selected, .nav-bar a:hover{
+	border-bottom: 2px solid #b70d04
+}
+
+/*   HOME   */
+.intro{
+	background-image: url('/assets/img/landschap.png');
+	height: 460px;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	position: relative;
+	top: -70px;
+}
+
+.artisanaal{
+	background-image: url('/assets/img/artisanaal.png');
+	width: 520px;
+	height: 78px;
+	position: relative;
+	left: 430px;
+    top: 260px;
+	span{
+		display: none;
+	}
+}
+
+.lees_meer{
+	margin: 0 auto;
+	display: block;
+	background-image: url('/assets/img/lees_meer.png');
+	width: 72px;
+	height: 31px;
+	position: relative;
+	top: 390px;
+	>span{
+		display: none;
+	}
+}
+
+#kaasmakerij{
+	margin: 50px 0 0 300px;
+}
+
+.echte_kaasmakerij{
+	background-image: url('/assets/img/1vande3.png');
+	width: 304px;
+	height: 235px;
+	float: left;
+	>span{
+		display: none;
+	}
+}
+
+.pater_kaas{
+	position: relative;
+    left: -100px;
+    top: -45px;
+}
+
+.ontdek{
+	background-image: url('/assets/img/interactief.png');
+	background-repeat: no-repeat;
+	display: block;
+	width: 160px;
+	height: 67px;
+	position: relative;
+	left: 90px;
+    top: -30px;
+	>span{
+		display: none;
+	}
+}
+
+.recepten{
+	background: url('/assets/img/onderkant.png');
+	padding: 130px;
+	height: 400px;
+}
+
+.elke_moment{
+	background-image: url('assets/img/elke_moment.png');
+	/*background-image: url('assets/img/elke_moment_bg.png'), url('assets/img/elke_moment.png');*/
+	width: 362px;
+	height: 80px;
+}
+
+/*   KAASTIPS   */
+
+/*   KAASPROCES   */
+
+canvas{
+	margin: 0 auto 110px auto;
+}
+
+/*   RECEPTEN   */
+
+/*   VERKOOPPUNTEN   */
+
+
+/*   FOOTER   */
+
+footer{
+	width: 100%;
+	height: 100px;
+	background-image: url('/assets/img/background.jpg');
+	background-color: #02858a;
+	background-blend-mode: multiply;
+	background-size: cover;
+}
+
+.streekproduct{
+	background-image: url('/assets/img/streekproduct.png');
+	display: block;
+	width: 137px;
+	height: 137px;
+	opacity: 1;
+	position: relative;
+	top: -70px;
+	margin: 0 auto;
+	>span{
+		display: none;
+	}
+}
+
+canvas{
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99222222, endColorstr=#99222222);
+	-ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99222222, endColorstr=#99222222);
+	box-shadow:0px 0px 77px #CFAB8A;
+	border-radius: 4px; 
+}
+
 
 @import 'mqueries';
 
