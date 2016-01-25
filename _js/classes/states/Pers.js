@@ -3,8 +3,6 @@ var bounds_left;
 
 export default class Pers extends Phaser.State {
   create() {
-    this.background = this.game.add.sprite(0, 0, 'background');
-
     this.plaat = this.game.add.sprite(322, 366, '3_plaat');
     this.potjes_rechts = this.game.add.sprite(494, 300, '3_potjes_rechts')
     this.potjes_links = this.game.add.sprite(390, 310, '3_potjes_links')
@@ -38,9 +36,6 @@ export default class Pers extends Phaser.State {
     this.nextButton = this.game.add.button(this.game.width -30, 30, 'arrow', this.nextClick, this);
     this.nextButton.anchor.setTo(0.5, 0.5);
   }
-
-
-
 
   nextClick() {
     this.game.state.start('Rijpen');

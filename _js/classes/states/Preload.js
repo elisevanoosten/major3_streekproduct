@@ -2,7 +2,6 @@ export default class Preload extends Phaser.State {
   preload() {
     this.load.onLoadComplete.addOnce(this.onLoadComplete, this);
 
-    // this.load.atlasJSONHash('spritesheet', 'assets/img/spritesheet.png', 'assets/data/spritesheet.json');
     this.load.image('background', 'assets/img/bg.jpg');
     this.load.image('arrow', 'assets/img/arrow.png');
 
@@ -14,6 +13,8 @@ export default class Preload extends Phaser.State {
     this.load.image('1_drup', 'assets/img/1_drup.png');
     this.load.image('1_milk', 'assets/img/1_milk.png');
     this.load.image('1_uier', 'assets/img/1_uier.png');
+    this.load.image('1_melk', 'assets/img/1_melk.png');
+    this.load.spritesheet('1_melk', 'assets/img/1_melk.png', 96, 90, 8);
 
     this.load.image('2_bg', 'assets/img/2_bg.png');
     this.load.image('2_stremsel', 'assets/img/2_stremsel.png');
@@ -34,7 +35,6 @@ export default class Preload extends Phaser.State {
     this.load.image('5_etiketten', 'assets/img/5_etiketten.png');
     this.load.image('5_etiketje', 'assets/img/5_etiketje.png');
     this.load.image('5_kaasbol', 'assets/img/5_kaasbol.png');
-    // this.load.image('wide', 'assets/img/wide.png');
   }
 
   onLoadComplete() {

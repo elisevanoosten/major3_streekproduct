@@ -10,7 +10,7 @@ import End from './classes/states/End';
 let game;
 
 const init = () => {
-	game = new Phaser.Game(900, 600, Phaser.AUTO, "phaser-game");
+	game = new Phaser.Game(900, 600, Phaser.AUTO, "phaser-game", null, true);
 	game.state.add('Preload', Preload, false);
 	game.state.add('Start', Start, false);
 	game.state.add('Koe', Koe, false);
