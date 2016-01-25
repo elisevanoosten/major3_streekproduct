@@ -32,7 +32,7 @@
                         <h2>Een artisanaal verhaal</h2>
                     </span>
                 </header>
-                <a href="#kaasmakerij" class="lees_meer"><span>Lees meer</span></a>
+                <a href="#kaasmakerij" class="lees_meer scroll"><span>Lees meer</span></a>
             </section>
 
             <section id="kaasmakerij">
@@ -45,25 +45,33 @@
         </div>
         <section class="recepten">
             <header>
+                <a href="recepten.html" class="bekijk_recepten"><span>Bekijk alle recepten</span></a>
                 <h1 class="elke_moment"><span>Om op elke moment lekker van te genieten</span></h1>
-                <p>Bekijk alle <a href="recepten.html">Recepten</a></p>
             </header>
-            <article class="recept smorgens">
-                <header><h1>'s Morgens</h1></header>
-                <p>Postelse harde abdijkaas met Leuvense mosterd, rucola en augurk. <a href="recepten.html">lees meer</a></p>
-            </article>
-            <article class="recept smiddags">
-                <header><h1>'s Middags</h1></header>
-                <p>Quiche van Postelkaas, Vlaamse gedroogde hestp,  ajuin en tomatensalsa met Hasseltse jenever. <a href="recepten.html">lees meer</a></p>
-            </article>
-            <article class="recept savonds">
-                <header><h1>'s Avonds</h1></header>
-                <p>Gratin van Mechelse koekoek met Postelse harde abdijkaas <a href="recepten.html">lees meer</a></p>
-            </article>
+            <div class="recept-container">
+                <article class="recept smorgens">
+                    <img src="assets/img/smorgens.png" height="140" width="205" alt="'s morgens">
+                    <header><h1>'s Morgens</h1></header>
+                    <p>Postelse harde abdijkaas met Leuvense mosterd, rucola en augurk. <a href="recepten.html">lees meer</a></p>
+                </article>
+                <article class="recept smiddags">
+                    <img src="assets/img/smiddags.png" height="137" width="160" alt="'s middags">
+                    <header><h1>'s Middags</h1></header>
+                    <p>Quiche van Postelkaas, Vlaamse gedroogde hestp,  ajuin en tomatensalsa met Hasseltse jenever. <a href="recepten.html">lees meer</a></p>
+                </article>
+                <article class="recept savonds">
+                    <img src="assets/img/savonds.png" height="152" width="180" alt="'s avonds">
+                    <header><h1>'s Avonds</h1></header>
+                    <p>Gratin van Mechelse koekoek met Postelse harde abdijkaas <a href="recepten.html">lees meer</a></p>
+                </article>
+            </div>
         </section>
     </main>
     <footer>
         <a class="streekproduct" href="http://www.streekproduct.be/producten/detail.phtml?id=820&start=0&keywords=Postelse%20harde%20abdijkaas" target="_BLANK"><span>Streekproduct.be</span></a>    
     </footer>
+
+
+    <script src="js/scroll.js"></script>
 </body>
 </html>

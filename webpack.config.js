@@ -6,6 +6,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
 
   entry: [
+    './_js/scroll.js',
     './_js/script.js',
     './_scss/style.scss'
   ],

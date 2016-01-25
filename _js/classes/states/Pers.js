@@ -1,3 +1,6 @@
+var bounds_right;
+var bounds_left;
+
 export default class Pers extends Phaser.State {
   create() {
     this.background = this.game.add.sprite(0, 0, 'background');
@@ -10,9 +13,7 @@ export default class Pers extends Phaser.State {
     this.bg = this.game.add.sprite(this.game.width/2, 250, '3_bg');
     this.bg.anchor.setTo(0.5, 0.5);
     
-
-    // console.log(this.pers_rechts);
-
+    // pers drags
     this.pers_rechts.inputEnabled = true;
     this.pers_links.inputEnabled = true;
 
@@ -22,18 +23,26 @@ export default class Pers extends Phaser.State {
     this.pers_rechts.input.allowHorizontalDrag = false;
     this.pers_links.input.allowHorizontalDrag = false;
 
+    // bounds
+    bounds_right = new Phaser.Rectangle(500, 95, 200, 270);
+    var graphics_right = this.game.add.graphics(bounds_right.x, bounds_right.y);
+    graphics_right.drawRect(0,0,bounds_right.width,bounds_right.height);
+    this.pers_rechts.input.boundsRect = bounds_right;
+
+    bounds_left = new Phaser.Rectangle(400, 125, 200, 225);
+    var graphics_left = this.game.add.graphics(bounds_left.x, bounds_left.y);
+    graphics_left.drawRect(0,0,bounds_left.width,bounds_left.height);
+    this.pers_links.input.boundsRect = bounds_left;
+
+    // next page
     this.nextButton = this.game.add.button(this.game.width -30, 30, 'arrow', this.nextClick, this);
     this.nextButton.anchor.setTo(0.5, 0.5);
   }
 
+
+
+
   nextClick() {
-    console.log('klik Pers');
     this.game.state.start('Rijpen');
-  }
-
-  render() {
-
-    // game.debug.inputInfo(32, 32);
-    // game.debug.spriteInputInfo(sprite, 300, 32);
   }
 }
