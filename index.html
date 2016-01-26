@@ -7,8 +7,23 @@
     <meta name="keywords" content="abdijkaas, abdij, Postel, authentiek, kaas">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link rel="stylesheet" type="text/css" href="/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
     <link href="/assets/logo.png" rel="shortcut icon" type="image/x-icon" />
+
+    <script type="text/javascript">
+        WebFontConfig = {
+            google: { families: [ 'Roboto+Slab::latin' ] }
+        };
+        (function() {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+            '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+    })(); 
+</script>
 </head>
 <body>
 	<header class="nav-header">
@@ -25,45 +40,69 @@
     </header>
     <main>
         <div class="center">
-            <section class="intro">
-                <header class="artisanaal">
-                    <span>
-                        <h1>Abdijkaas van postel</h1>
-                        <h2>Een artisanaal verhaal</h2>
-                    </span>
-                </header>
-                <a href="#kaasmakerij" class="lees_meer scroll"><span>Lees meer</span></a>
+            <section>
+                <div class="intro">
+                    <header class="artisanaal">
+                        <span>
+                            <h1>Abdijkaas van postel</h1>
+                            <h2>Een artisanaal verhaal</h2>
+                        </span>
+                    </header>
+                    <a href="#meer_info" class="lees_meer scroll"><span>Lees meer</span></a>
+                </div>
+                <div id="meer_info" class="meer_info">
+                    <p>Postel is voornamelijk bekend om zijn Norbertijnen abdij. Hier wordt sinds 1947 onze welbekende abdijkaas artisanaal aangemaakt en kan je sinds 1960 ook het lekkere abdijbier “Postel” proeven</p>
+                    <div class="erkend_streekproduct">
+                        <img src="assets/img/erkend_streekproduct.png" height="284" width="413" alt="Erkend Streekproduct">
+                        <p>Onze kaas is helemaal artisanaal gemaakt en dat proef je! Hierdoor verkreeg het ook de eer om tot streekproduct benoemd te worden. Vlaamse streekproducten staan voor diversificatie, innovatie, verbreding, duurzaamheid en biodiversiviteit.</p>
+                    </div>
+                    <div class="wandelbos">
+                        <img src="assets/img/boompje.png" height="297" width="504" alt="Wandelbos het klavertje vier">
+                        <p>Onze abdijkaas is een puur product van eigen Kempense bodem. Postel, het gehucht van de gemeente Mol is gelegen te midden van uitgestrekte bosgebieden. Je kan er gezellig wandelen, zo zijn er de mooie wandelwegen van “het klavertje vijf”</p>
+                    </div>
+                </div>
             </section>
 
-            <section id="kaasmakerij">
-                <header>
-                    <h1 class="echte_kaasmakerij"><span>1 van de 3 laatste abdijen met een echte kaasmakerij</span></h1>
-                </header>
-                <img src="assets/img/pater.png" height="270" width="258" class="pater_kaas" alt="">
+            <section class="kaasmakerij">
+                <div>
+                    <header>
+                        <h1 class="echte_kaasmakerij"><span>1 van de 3 laatste abdijen met een echte kaasmakerij</span></h1>
+                    </header>
+                    <img src="assets/img/pater.png" height="356" width="291" alt="Pater met kaas">
+                </div>    
                 <a href="kaasproces.html" class="ontdek"><span>Ontdek ze via onze Interactieve rondleiding</span></a>
             </section>
         </div>
         <section class="recepten">
-            <header>
-                <a href="recepten.html" class="bekijk_recepten"><span>Bekijk alle recepten</span></a>
-                <h1 class="elke_moment"><span>Om op elke moment lekker van te genieten</span></h1>
-            </header>
-            <div class="recept-container">
-                <article class="recept smorgens">
-                    <img src="assets/img/smorgens.png" height="140" width="205" alt="'s morgens">
-                    <header><h1>'s Morgens</h1></header>
-                    <p>Postelse harde abdijkaas met Leuvense mosterd, rucola en augurk. <a href="recepten.html">lees meer</a></p>
-                </article>
-                <article class="recept smiddags">
-                    <img src="assets/img/smiddags.png" height="137" width="160" alt="'s middags">
-                    <header><h1>'s Middags</h1></header>
-                    <p>Quiche van Postelkaas, Vlaamse gedroogde hestp,  ajuin en tomatensalsa met Hasseltse jenever. <a href="recepten.html">lees meer</a></p>
-                </article>
-                <article class="recept savonds">
-                    <img src="assets/img/savonds.png" height="152" width="180" alt="'s avonds">
-                    <header><h1>'s Avonds</h1></header>
-                    <p>Gratin van Mechelse koekoek met Postelse harde abdijkaas <a href="recepten.html">lees meer</a></p>
-                </article>
+            <div class="center">
+                <header class="elke_moment">
+                    <h1><span>Om op elke moment lekker van te genieten</span></h1>
+                    <a href="recepten.html" class="bekijk_recepten"><span>Bekijk alle recepten</span></a>
+                </header>
+                <div class="recept-container">
+                    <article class="recept smorgens">
+                        <header>
+                            <h1>'s Morgens</h1>
+                            <img src="assets/img/smorgens.png" height="131" width="160" alt="'s morgens">
+                        </header>
+                        <p>Postelse harde abdijkaas met Leuvense mosterd, rucola en augurk. <a href="recepten.html">lees meer</a></p>
+                    </article>
+                    <article class="recept smiddags">
+                        <header>
+                            <h1>'s Middags</h1>
+                            <img src="assets/img/smiddags.png" height="137" width="160" alt="'s middags">
+                        </header>
+                        
+                        <p>Quiche van Postelkaas, Vlaamse gedroogde hestp,  ajuin en tomatensalsa. <a href="recepten.html">lees meer</a></p>
+                    </article>
+                    <article class="recept savonds">
+                        <header>
+                            <h1>'s Avonds</h1>
+                            <img src="assets/img/savonds.png" height="135" width="160" alt="'s avonds">
+                        </header>
+                        <p>Gratin van Mechelse koekoek met Postelse harde abdijkaas <a href="recepten.html">lees meer</a></p>
+                    </article>
+                </div>
             </div>
         </section>
     </main>

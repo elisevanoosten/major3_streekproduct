@@ -5,9 +5,14 @@ body {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	background-image: url('/assets/img/background.jpg');
 	background-size: contain;
-	font-family: "Courier New", Courier, monospace;
-	font-weight: bold;
 	color: #000706;
+}
+
+p{
+ 	font-size: 1.4em;
+    line-height: 1.4em;
+    margin: 20px 0;
+
 }
 
 .nav-header, .center{
@@ -94,25 +99,62 @@ main{
 	}
 }
 
-#kaasmakerij{
-	margin: 50px 0 0 300px;
+.meer_info{
+	width: 700px;
+	/*text-align: center;*/
+	padding: 90px 0;
+	margin: 0 auto;
+}
+
+.erkend_streekproduct, .wandelbos{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.erkend_streekproduct{
+	margin-top: -60px;
+	p{
+		margin-left: -40px;
+	}
+	img{
+		margin-left: -70px;
+	}
+}
+.wandelbos{
+	margin-top: -105px;
+	flex-direction: row-reverse;
+	img{
+		margin-right: -120px;
+	}
+	p{
+		margin-right: -40px;
+	}
+}
+
+.kaasmakerij{
+	width: 600px;
+	margin: 0 auto;
+	div{
+		display: flex;
+	}
 }
 
 .echte_kaasmakerij{
 	background-image: url('/assets/img/1vande3.png');
 	width: 304px;
 	height: 235px;
-	float: left;
+	/*float: left;*/
 	>span{
 		display: none;
 	}
 }
 
-.pater_kaas{
+/*.pater_kaas{
 	position: relative;
     left: -100px;
     top: -45px;
-}
+}*/
 
 .ontdek{
 	background-image: url('/assets/img/interactief.png');
@@ -120,9 +162,9 @@ main{
 	display: block;
 	width: 160px;
 	height: 67px;
-	position: relative;
-	left: 90px;
-    top: -30px;
+	/*position: relative;*/
+	/*left: 90px;*/
+    /*top: -30px;*/
 	>span{
 		display: none;
 	}
@@ -131,8 +173,9 @@ main{
 .recepten{
 	background: url('/assets/img/onderkant.png');
 	background-repeat: repeat-x;
-	background-size: contain;	
-	padding: 140px 70px;
+	background-size: contain;
+	background-position: bottom;	
+	padding: 100px 0;
 	>header{
 		width: 1028px;
 		padding-top: 100px;
@@ -141,14 +184,31 @@ main{
 }
 
 .elke_moment{
-	margin-left: 70px;
-	background-image: url('/assets/img/elke_moment.png');
-	/*background-image: url('assets/img/elke_moment_bg.png'), url('assets/img/elke_moment.png');*/
-	width: 362px;
-	height: 80px;
-	>span{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+    margin-top: 56px;
+	h1{
+		margin-right: 200px;
+		background-image: url('/assets/img/elke_moment.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+		width: 362px;
+		height: 80px;
+		>span{
+			display: none;
+		}
+	}
+}
+
+.bekijk_recepten{
+	background-image: url('/assets/img/bekijk_alle.png');
+	width: 124px;
+	height: 64px;
+	span{
 		display: none;
 	}
+
 }
 
 .recept-container{
@@ -164,44 +224,33 @@ main{
 	background-position: center bottom;
 	height: 294px;
 	width: 294px;
-	header{
+	padding: 60px 0 0 0px;
+	>header{
+		display: flex;
+    	justify-content: space-between;
+    	align-items: flex-end;
 		font-family: "bebas neue", helvetica, sans-serif;
 	    font-size: 3.2em;
     	color: #01453a;
-    	margin: 202px 0 10px 53px;
-    	position: relative;
-    	top: -60px;
+	}
+	h1{
+		z-index: 2;
+		position: relative;
+    	left: 40px;
+
 	}
 	p{
-		margin-left: 60px;
 		width: 200px;
-		position: relative;
-    	top: -60px;
     	font-size: 1.3em;
+    	line-height: 1.2em;
+    	margin: 0 auto;
 	}
 	img{
 		opacity: .7;
-		float: right;
-		overflow: auto;
-		margin-top: 30px;
-		position: relative;
-		left: 30px;
 	}
 	a{
 		display: block;
 		color: #b70d04;
-	}
-}
-
-.bekijk_recepten{
-	background-image: url('/assets/img/bekijk_alle.png');
-	display: block;
-	width: 124px;
-	height: 64px;
-	float: right;
-	overflow: auto;
-	>span{
-		display: none;
 	}
 }
 
@@ -215,6 +264,80 @@ canvas{
 }
 
 /*   RECEPTEN   */
+.klaarmaken{
+	background-image: url('/assets/img/klaarmaken.png');
+	width: 555px;
+	height: 371px;
+	margin: 0 auto;
+	span{
+		display: none;
+	}
+}
+
+
+.recept-container-big {
+	display: flex;
+	flex-direction: column;
+	/*justify-content: center;*/
+	margin: 0 auto;
+	article{
+		/*display: flex;*/
+		/*flex-direction: row-reverse;*/
+		/*align-items: center;*/
+	}
+}
+
+.recept-title{
+	font-size: 3em;
+	font-family: "bebas neue", helvetica, sans-serif;
+	width: 300px;
+	font-weight: bold;
+}
+
+.recept-item {
+	/*display: flex;
+	justify-content: flex-end;*/
+	header{
+		display: flex;
+		flex-direction: row;
+		width: 250px;
+		img{
+			order: 1;
+		}
+		div{
+			order: 2;
+		}
+	}
+}
+
+.recept-detail{
+	display: flex;
+	width: 500px;
+	h1{
+		font-weight: bold;
+		font-size: 1.7em;
+		text-decoration: underline;
+		/*margin-bottom: 20px;*/
+	}
+	ul{
+	    margin: 20px 0;
+	}
+	li{
+		font-size: 1.4em;
+	    line-height: 1.4em;
+	}
+}
+
+.mini-info{
+	display: flex;
+	align-items: baseline;
+	justify-content: space-around;
+    width: 397px;
+	li{
+		/*float: left;*/
+		margin-right: 20px;
+	}
+}
 
 /*   VERKOOPPUNTEN   */
 .verkooppunten{
@@ -293,7 +416,12 @@ canvas{
 .telefoon{
 	list-style-image: url('/assets/img/telefoon.png');
 }
-
+.kok{
+	list-style-image: url('/assets/img/kok.png');
+}
+.persoon{
+	list-style-image: url('/assets/img/persoon.png');
+}
 
 /*   FOOTER   */
 

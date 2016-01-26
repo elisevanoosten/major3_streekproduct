@@ -6,7 +6,16 @@ export default class Rijpen extends Phaser.State {
   create() {
     this.bg = this.game.add.sprite(100,70, '4_bg')
     this.kaasrek = this.game.add.sprite(100,450, '4_kaasrek')
-  
+    // nav
+    this.nextButton = this.game.add.button(this.game.width -30, 600, 'arrow', this.nextClick, this);
+    this.nextButton.anchor.setTo(0.5, 0.5);
+    this.previousButton = this.game.add.button(30, 600, 'arrow', this.previousClick, this);
+    this.previousButton.anchor.setTo(0.5, 0.5);
+    this.previousButton.rotation = 3.1;
+    // statusbar
+    this.timeline = this.game.add.sprite(this.game.width/2, 600, '4_status')
+    this.timeline.anchor.setTo(0.5, 0.5);
+
     // kaasrek drag
     this.kaasrek.inputEnabled = true;
     this.kaasrek.input.enableDrag(false, true);
@@ -17,10 +26,6 @@ export default class Rijpen extends Phaser.State {
     var graphics = this.game.add.graphics(bounds.x, bounds.y);
     graphics.drawRect(0,0,bounds.width,bounds.height);
     this.kaasrek.input.boundsRect = bounds;
-
-    // nextpage
-    this.nextButton = this.game.add.button(this.game.width -30, 30, 'arrow', this.nextClick, this);
-    this.nextButton.anchor.setTo(0.5, 0.5);
   }
 
   update(){
@@ -55,5 +60,8 @@ export default class Rijpen extends Phaser.State {
 
   nextClick() {
     this.game.state.start('Etiketten');
+  }
+  previousClick() {
+    this.game.state.start('Pers');
   }
 }

@@ -4,7 +4,15 @@ export default class Stremsel extends Phaser.State {
   create() {    
     this.bg = this.game.add.sprite(this.game.width/2, 300, '2_bg')
     this.bg.anchor.setTo(0.5, 0.5);
-
+   // nav
+    this.nextButton = this.game.add.button(this.game.width -30, 600, 'arrow', this.nextClick, this);
+    this.nextButton.anchor.setTo(0.5, 0.5);
+    this.previousButton = this.game.add.button(30, 600, 'arrow', this.previousClick, this);
+    this.previousButton.anchor.setTo(0.5, 0.5);
+    this.previousButton.rotation = 3.1;
+    // statusbar
+    this.timeline = this.game.add.sprite(this.game.width/2, 600, '2_status')
+    this.timeline.anchor.setTo(0.5, 0.5);
 
     // flesjes aanmaken
     this.stremsel = this.game.add.sprite(520, 105, '2_stremsel')
@@ -25,11 +33,6 @@ export default class Stremsel extends Phaser.State {
     emitter.setAlpha(0.3);
     emitter.gravity = 1100;
     emitter.lifespan = 420;
- 
-    // next
-    this.nextButton = this.game.add.button(this.game.width -30, 30, 'arrow', this.nextClick, this);
-    this.nextButton.anchor.setTo(0.5, 0.5);
-
   }
 
   update(){
@@ -50,7 +53,6 @@ export default class Stremsel extends Phaser.State {
       this.rotateStremsel();
       if(this.stremselRotationIsSmall()){
         this.emitterStremsel();
-        console.log('ej');
       }
     }else{
       this.stremsel.rotation = 0;
@@ -101,6 +103,9 @@ export default class Stremsel extends Phaser.State {
 
   nextClick() {
     this.game.state.start('Pers');
+  }
+  previousClick() {
+    this.game.state.start('Koe');
   }
 }
 

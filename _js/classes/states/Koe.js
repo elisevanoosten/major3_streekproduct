@@ -1,10 +1,23 @@
 var emitter;
 var teller;
+var readyForNextLevel = false;
+var scaling = 0;
+var timer;
 export default class Koe extends Phaser.State {
 
   create() {
-    this.bg = this.game.add.sprite(this.game.width/2, this.game.height/2, '1_bg')
+    this.bg = this.game.add.sprite(this.game.width/2, 300, '1_bg')
     this.bg.anchor.setTo(0.5, 0.5);
+    // nav
+    this.nextButton = this.game.add.button(this.game.width -30, 600, 'arrow', this.nextClick, this);
+    this.nextButton.anchor.setTo(0.5, 0.5);
+    this.nextButton.alpha = 0;
+    this.previousButton = this.game.add.button(30, 600, 'arrow', this.previousClick, this);
+    this.previousButton.anchor.setTo(0.5, 0.5);
+    this.previousButton.rotation = 3.1;
+    // statusbar
+    this.timeline = this.game.add.sprite(this.game.width/2, 600, '1_status')
+    this.timeline.anchor.setTo(0.5, 0.5);
 
     //uier
     this.uier = this.game.add.button(395, 320, '1_uier', this.uierClick, this);
@@ -23,35 +36,51 @@ export default class Koe extends Phaser.State {
     emitter.lifespan = 365;
 
     //emmerke
-    this.melk = this.game.add.sprite(353, 413, '1_melk');
-    this.melk.animations.add('walk');
-
-    this.nextButton = this.game.add.button(this.game.width -30, 30, 'arrow', this.nextClick, this);
-    this.nextButton.anchor.setTo(0.5, 0.5);
-
+    this.melk = this.game.add.sprite(339, 388, '1_melk');
+    this.melk.animations.frame = 0;
     this.previousY = 0;
+    teller = 0;
+
+    //duim
+    this.duim = this.game.add.sprite(580, 380, '1_duim');
+    this.duim.anchor.setTo(0.5, 0.5);
+    this.duim.scale.set(0,0);
+    this.duim.alpha = 0;
+
+    //timer
+    timer = this.game.time.create(false);
+    
   }
 
   update(){
-    emitter.on = false;
-    console.log(this.melk.frame);
+    this.emitterOff();
     let distanceY = this.game.input.activePointer.clientY - this.previousY;
 
     if(this.uierDragged()){
       this.putUierBack();
       
       if(distanceY != 0){
-        emitter.on = true;
-        teller++;
-        if(teller = 30){
-          teller = 0
-          this.melk.animations.play('walk', 10, false, false);
+        teller ++;
+        this.emitterOn();
+
+        if(teller > 15 && (this.melk.animations.frame !== 12)){
+          teller = 0;
+          this.melk.animations.frame ++;
+        }
+        if(this.melk.animations.frame == 12){
+          readyForNextLevel = true;
         }
       }
     }
 
+    if(readyForNextLevel){
+      this.scaleUp();
+      this.wiggleArrow()
+    }
+
     this.previousY = this.game.input.activePointer.clientY;
   }
+
 
 
 
@@ -64,8 +93,45 @@ export default class Koe extends Phaser.State {
     this.uier.y = 320;
   }
 
+  emitterOff(){
+    emitter.on = false;
+  }
+
+  emitterOn(){
+    emitter.on = true;
+  }
+
   nextClick() {
-    console.log('klik koe');
     this.game.state.start('Stremsel');
+  }
+  previousClick() {
+    this.game.state.start('Start');
+  }
+
+  scaleUp(){
+    scaling += 0.06;
+    if(scaling <= 0.8){
+      this.duim.alpha = 1;
+      this.duim.rotation += 0.48;
+      this.duim.scale.set(scaling,scaling);
+    }
+  }
+
+  wiggleArrow(){
+    this.nextButton.alpha = 1;
+    
+    // if(this.nextButton.rotation > 1){
+    //   this.nextButton.rotation +=0.08;
+    // }else if(this.nextButton.rotation < -1){
+    //   this.nextButton.rotation -=0.08;
+    // }
+
+    if(this.nextButton.x <= 880){
+      this.nextButton.x += 0.4;
+    }else if(this.nextButton.x >= 840){
+      this.nextButton.x -= 20;
+    }
+    
+
   }
 }
