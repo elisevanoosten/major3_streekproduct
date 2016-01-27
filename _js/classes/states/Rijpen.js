@@ -1,8 +1,10 @@
 var scaling;
 var bounds;
-var smaller
+var smaller;
+var readyForNextLevel = false;
 
 export default class Rijpen extends Phaser.State {
+  
   create() {
     this.bg = this.game.add.sprite(100,70, '4_bg');
     this.kaasrek = this.game.add.sprite(100,450, '4_kaasrek');
@@ -10,12 +12,13 @@ export default class Rijpen extends Phaser.State {
     // nav
     this.nextButton = this.game.add.button(this.game.width -30, 600, 'arrow', this.nextClick, this);
     this.nextButton.anchor.setTo(0.5, 0.5);
+    this.nextButton.alpha = 0;
     this.previousButton = this.game.add.button(30, 600, 'arrow', this.previousClick, this);
     this.previousButton.anchor.setTo(0.5, 0.5);
     this.previousButton.rotation = 3.1;
 
     // statusbar
-    this.timeline = this.game.add.sprite(this.game.width/2, 600, '4_status')
+    this.timeline = this.game.add.sprite(this.game.width/2, 600, '4_status');
     this.timeline.anchor.setTo(0.5, 0.5);
 
     // kaasrek drag
@@ -32,22 +35,26 @@ export default class Rijpen extends Phaser.State {
   }
 
   update(){
-      if (this.inFrontOfDoor()){
-        if(this.biggerThanDoor()){
-          this.scaleDown();
-        }else{
-          this.driveInside();
-        }
+    if (this.inFrontOfDoor()){
+      if(this.biggerThanDoor()){
+        this.scaleDown();
+        readyForNextLevel = true;
+      }else{
+        this.driveKarrekeInside();
       }
+    }
 
+    if(readyForNextLevel){
+      this.wiggleArrow();
+    }
   }
 
   inFrontOfDoor(){
-    return this.kaasrek.x > 490 && this.kaasrek.x < 520 && this.kaasrek.y < 440
+    return this.kaasrek.x > 490 && this.kaasrek.x < 520 && this.kaasrek.y < 440;
   }
 
   biggerThanDoor(){
-    return scaling > 0.4
+    return scaling > 0.4;
   }
 
   scaleDown(){
@@ -55,7 +62,7 @@ export default class Rijpen extends Phaser.State {
     this.kaasrek.scale.set(scaling,scaling);
   }
 
-  driveInside(){
+  driveKarrekeInside(){
     this.kaasrek.x = 563;
     this.kaasrek.y = 396;
     this.kaasrek.input.draggable = false;
@@ -66,5 +73,15 @@ export default class Rijpen extends Phaser.State {
   }
   previousClick() {
     this.game.state.start('Pers');
+  }
+
+  wiggleArrow(){
+    this.nextButton.alpha = 1;
+
+    if(this.nextButton.x <= 880){
+      this.nextButton.x += 0.4;
+    }else if(this.nextButton.x >= 840){
+      this.nextButton.x -= 20;
+    }
   }
 }

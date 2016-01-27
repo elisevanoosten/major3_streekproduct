@@ -1,0 +1,8 @@
+/* TODO */
+@font-face {
+	font-family: 'Bebas_neue';
+	src:	url('bebas_neue.woff2') format('woff2'),
+				url('bebas_neue.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}

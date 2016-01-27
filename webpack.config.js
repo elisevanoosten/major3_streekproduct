@@ -6,7 +6,6 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
 
   entry: [
-    './_js/scroll.js',
     './_js/script.js',
     './_scss/style.scss'
   ],
@@ -32,6 +31,12 @@ module.exports = {
         loader: 'babel'
       },
 
+      // {
+      //   test: /\.js$/,
+      //   loader: "eslint-loader",
+      //   exclude: /node_modules/
+      // },
+      
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('css!postcss!sass?outputStyle=expanded')

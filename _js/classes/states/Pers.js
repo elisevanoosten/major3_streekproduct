@@ -1,46 +1,63 @@
-var bounds_right;
-var bounds_left;
+var persLeftReady = false;
+var persRightReady = false;
+var boundsRight;
+var boundsLeft;
 
 export default class Pers extends Phaser.State {
+  
   create() {
     // nav
     this.nextButton = this.game.add.button(this.game.width -30, 600, 'arrow', this.nextClick, this);
     this.nextButton.anchor.setTo(0.5, 0.5);
+    this.nextButton.alpha = 0;
     this.previousButton = this.game.add.button(30, 600, 'arrow', this.previousClick, this);
     this.previousButton.anchor.setTo(0.5, 0.5);
     this.previousButton.rotation = 3.1;
+
     // statusbar
-    this.timeline = this.game.add.sprite(this.game.width/2, 600, '3_status')
+    this.timeline = this.game.add.sprite(this.game.width/2, 600, '3_status');
     this.timeline.anchor.setTo(0.5, 0.5);
 
     this.plaat = this.game.add.sprite(322, 366, '3_plaat');
-    this.potjes_rechts = this.game.add.sprite(494, 300, '3_potjes_rechts')
-    this.potjes_links = this.game.add.sprite(390, 310, '3_potjes_links')
-    this.pers_rechts = this.game.add.sprite(550, 100, '3_pers_rechts')
-    this.pers_links = this.game.add.sprite(423, 150, '3_pers_links')
+    this.potjesRight = this.game.add.sprite(494, 300, '3_potjes_rechts');
+    this.potjesLeft = this.game.add.sprite(390, 310, '3_potjes_links');
+    this.persRight = this.game.add.sprite(550, 100, '3_pers_rechts');
+    this.persLeft = this.game.add.sprite(423, 150, '3_pers_links');
     this.bg = this.game.add.sprite(this.game.width/2, 250, '3_bg');
     this.bg.anchor.setTo(0.5, 0.5);
     
     // pers drags
-    this.pers_rechts.inputEnabled = true;
-    this.pers_links.inputEnabled = true;
+    this.persRight.inputEnabled = true;
+    this.persLeft.inputEnabled = true;
 
-    this.pers_rechts.input.enableDrag();
-    this.pers_links.input.enableDrag();
+    this.persRight.input.enableDrag();
+    this.persLeft.input.enableDrag();
 
-    this.pers_rechts.input.allowHorizontalDrag = false;
-    this.pers_links.input.allowHorizontalDrag = false;
+    this.persRight.input.allowHorizontalDrag = false;
+    this.persLeft.input.allowHorizontalDrag = false;
 
     // bounds
-    bounds_right = new Phaser.Rectangle(500, 95, 200, 270);
-    var graphics_right = this.game.add.graphics(bounds_right.x, bounds_right.y);
-    graphics_right.drawRect(0,0,bounds_right.width,bounds_right.height);
-    this.pers_rechts.input.boundsRect = bounds_right;
+    boundsRight = new Phaser.Rectangle(500, 95, 200, 270);
+    var graphics_right = this.game.add.graphics(boundsRight.x, boundsRight.y);
+    graphics_right.drawRect(0,0,boundsRight.width,boundsRight.height);
+    this.persRight.input.boundsRect = boundsRight;
 
-    bounds_left = new Phaser.Rectangle(400, 125, 200, 225);
-    var graphics_left = this.game.add.graphics(bounds_left.x, bounds_left.y);
-    graphics_left.drawRect(0,0,bounds_left.width,bounds_left.height);
-    this.pers_links.input.boundsRect = bounds_left;
+    boundsLeft = new Phaser.Rectangle(400, 125, 200, 225);
+    var graphics_left = this.game.add.graphics(boundsLeft.x, boundsLeft.y);
+    graphics_left.drawRect(0,0,boundsLeft.width,boundsLeft.height);
+    this.persLeft.input.boundsRect = boundsLeft;
+  }
+
+  update(){
+    if(this.persLeft.position.y >= 208){
+      persLeftReady = true;
+    }
+    if(this.persRight.position.y >= 174){
+      persRightReady = true;
+    }
+    if(persLeftReady && persRightReady){
+      this.wiggleArrow();
+    }
   }
 
   nextClick() {
@@ -48,5 +65,15 @@ export default class Pers extends Phaser.State {
   }
   previousClick() {
     this.game.state.start('Stremsel');
+  }
+
+  wiggleArrow(){
+    this.nextButton.alpha = 1;
+
+    if(this.nextButton.x <= 880){
+      this.nextButton.x += 0.4;
+    }else if(this.nextButton.x >= 840){
+      this.nextButton.x -= 20;
+    }
   }
 }

@@ -16,8 +16,8 @@ export default class Preload extends Phaser.State {
     this.load.spritesheet('1_melk', 'assets/img/1_melkje.png', 115.5, 115.5, 14);
 
     this.load.image('2_bg', 'assets/img/2_bg.png');
-    this.load.image('2_stremsel', 'assets/img/2_stremsel.png');
-    this.load.image('2_zuursel', 'assets/img/2_zuursel.png');
+    this.load.image('2_stremsel', 'assets/img/2_stremsel_jar.png');
+    this.load.image('2_zuursel', 'assets/img/2_zuursel_jar.png');
 
     this.load.image('3_bg', 'assets/img/3_bg.png');
     this.load.image('3_plaat', 'assets/img/3_plaat.png');
@@ -41,6 +41,11 @@ export default class Preload extends Phaser.State {
     this.load.image('4_status', 'assets/img/4_status.png');
     this.load.image('5_status', 'assets/img/5_status.png');
 
+    this.load.image('hoera', 'assets/img/hoera.png');
+    this.load.image('kom_ons', 'assets/img/kom_ons.png');
+    this.load.image('bezoeken', 'assets/img/bezoeken.png');
+    this.load.image('niet_wachten', 'assets/img/niet_wachten.png');
+    this.load.image('floating_cheese', 'assets/img/floating_cheese.png');
   }
 
   onLoadComplete() {
