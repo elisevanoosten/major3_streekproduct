@@ -1,8 +1,6 @@
 var emitter;
 var teller;
 var readyForNextLevel = false;
-var scaling = 0;
-var timer;
 
 export default class Koe extends Phaser.State {
 
@@ -43,15 +41,6 @@ export default class Koe extends Phaser.State {
     this.melk.animations.frame = 0;
     this.previousY = 0;
     teller = 0;
-
-    //duim
-    this.duim = this.game.add.sprite(580, 380, '1_duim');
-    this.duim.anchor.setTo(0.5, 0.5);
-    this.duim.scale.set(0,0);
-    this.duim.alpha = 0;
-
-    //timer
-    timer = this.game.time.create(false);
   }
 
   update(){
@@ -61,7 +50,7 @@ export default class Koe extends Phaser.State {
     if(this.uierDragged()){
       this.putUierBack();
       
-      if(distanceY != 0){
+      if(distanceY !== 0){
         this.milking();
       }
     }
@@ -69,7 +58,7 @@ export default class Koe extends Phaser.State {
     this.previousY = this.game.input.activePointer.clientY;
 
     if(readyForNextLevel){
-      this.wiggleArrow()
+      this.wiggleArrow();
     }
   }
   
@@ -106,7 +95,7 @@ export default class Koe extends Phaser.State {
       teller = 0;
       this.melk.animations.frame ++;
     }
-    if(this.melk.animations.frame == 12){
+    if(this.melk.animations.frame === 12){
       readyForNextLevel = true;
     }
   }

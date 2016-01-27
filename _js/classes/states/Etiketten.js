@@ -34,7 +34,7 @@ export default class Etiketten extends Phaser.State {
     }
 
     if(readyForNextLevel){
-      this.wiggleArrow()
+      this.wiggleArrow();
     }
   }
 
@@ -49,7 +49,7 @@ export default class Etiketten extends Phaser.State {
   }
   
   etiketPush(){
-  	this.etiketje.alpha = 1;
+    this.etiketje.alpha = 1;
   }
 
   nextClick() {

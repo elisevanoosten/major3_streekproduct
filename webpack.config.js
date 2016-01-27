@@ -31,11 +31,11 @@ module.exports = {
         loader: 'babel'
       },
 
-      // {
-      //   test: /\.js$/,
-      //   loader: "eslint-loader",
-      //   exclude: /node_modules/
-      // },
+      {
+        test: /\.js$/,
+        loader: "eslint-loader",
+        exclude: /node_modules/
+      },
       
       {
         test: /\.scss$/,

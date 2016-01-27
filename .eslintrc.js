@@ -1,12 +1,13 @@
-module.exports = {
+module.exports = 
+{
   "rules": {
     "indent": [
     2,
-    4
+    "tab"
     ],
     "quotes": [
     2,
-    "double"
+    "single"
     ],
     "linebreak-style": [
     2,
@@ -15,11 +16,21 @@ module.exports = {
     "semi": [
     2,
     "always"
-    ]
+    ],
+    "no-console": 0,
+    "eqeqeq": 1
   },
   "env": {
     "es6": true,
     "browser": true
   },
+  "ecmaFeatures": {
+    "modules": true
+  },
+  "globals": {
+    "Phaser": true,
+    "mocha": true,
+    "require": true
+  },
   "extends": "eslint:recommended"
-};
+}

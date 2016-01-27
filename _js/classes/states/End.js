@@ -8,7 +8,7 @@ export default class End extends Phaser.State {
     this.kom_ons = this.game.add.sprite(740, 470, 'kom_ons');
     this.niet_wachten = this.game.add.sprite(this.game.width/2, 500, 'niet_wachten');
     this.bezoeken = this.game.add.button(750, 510, 'bezoeken', function() {  
-      window.location.href = "verkooppunten.html";  
+      window.location.href = 'verkooppunten.html';  
     }, this);
 
     // anchors

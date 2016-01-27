@@ -3,12 +3,20 @@
 
 body {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	background-image: url('/elise.van.oosten/20152016/MAIII/STREEKPRODUCT/assets/img/background.jpg');
+	background-image: url('/assets/img/background.jpg');
 	color: #000706;
 }
 
 p, li, h1, a {
 	visibility: hidden;
+}
+
+.wf-bebasneue-n4-inactive p,
+.wf-bebasneue-n4-inactive li,
+.wf-bebasneue-n4-inactive h1,
+.wf-bebasneue-n4-inactive a{
+	visibility: visible;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .wf-bebasneue-n4-active p,
@@ -46,7 +54,7 @@ main{
 }
 
 .logo{
-	background-image: url('/elise.van.oosten/20152016/MAIII/STREEKPRODUCT/assets/img/logo.png');
+	background-image: url('/assets/img/logo.png');
 	display: block;
 	width: 160px;
 	height: 158px;
@@ -60,7 +68,8 @@ main{
 		display: inline;
 		font-family: "Bebas_neue", helvetica, sans-serif;
 		text-transform: uppercase;
-		font-size: 2.3em;
+		font-weight: bold;
+		font-size: 2.5em;
 	}
 	a{
 		text-decoration: none;
@@ -75,7 +84,7 @@ main{
 
 /*   HOME   */
 .intro{
-	background-image: url('/elise.van.oosten/20152016/MAIII/STREEKPRODUCT/assets/img/landschap.png');
+	background-image: url('/assets/img/landschap.png');
 	height: 460px;
 	width: 100%;
 	background-repeat: no-repeat;
@@ -86,7 +95,7 @@ main{
 }
 
 .artisanaal{
-	background-image: url('/elise.van.oosten/20152016/MAIII/STREEKPRODUCT/assets/img/artisanaal.png');
+	background-image: url('/assets/img/artisanaal.png');
 	width: 520px;
 	height: 78px;
 	position: relative;
@@ -100,7 +109,7 @@ main{
 .lees_meer{
 	margin: 0 auto;
 	display: block;
-	background-image: url('/elise.van.oosten/20152016/MAIII/STREEKPRODUCT/assets/img/lees_meer.png');
+	background-image: url('/assets/img/lees_meer.png');
 	width: 72px;
 	height: 31px;
 	position: relative;
@@ -158,7 +167,7 @@ main{
 }
 
 .echte_kaasmakerij{
-	background-image: url('/elise.van.oosten/20152016/MAIII/STREEKPRODUCT/assets/img/1vande3.png');
+	background-image: url('/assets/img/1vande3.png');
 	width: 304px;
 	height: 235px;
 	>span{
@@ -167,7 +176,7 @@ main{
 }
 
 .ontdek{
-	background-image: url('/elise.van.oosten/20152016/MAIII/STREEKPRODUCT/assets/img/interactief.png');
+	background-image: url('/assets/img/interactief.png');
 	background-repeat: no-repeat;
 	display: block;
 	width: 160px;
@@ -180,7 +189,7 @@ main{
 }
 
 .recepten{
-	background: url('/elise.van.oosten/20152016/MAIII/STREEKPRODUCT/assets/img/onderkant.png');
+	background: url('/assets/img/onderkant.png');
 	background-repeat: repeat-x;
 	background-size: contain;
 	background-position: bottom;	
@@ -199,7 +208,7 @@ main{
 	margin-top: 56px;
 	h1{
 		margin-right: 200px;
-		background-image: url('/elise.van.oosten/20152016/MAIII/STREEKPRODUCT/assets/img/elke_moment.png');
+		background-image: url('/assets/img/elke_moment.png');
 		background-repeat: no-repeat;
 		background-size: contain;
 		width: 362px;
@@ -211,7 +220,7 @@ main{
 }
 
 .bekijk_recepten{
-	background-image: url('/elise.van.oosten/20152016/MAIII/STREEKPRODUCT/assets/img/bekijk_alle.png');
+	background-image: url('/assets/img/bekijk_alle.png');
 	width: 124px;
 	height: 64px;
 	span{
@@ -228,7 +237,7 @@ main{
 }
 
 .recept{
-	background-image: url('/elise.van.oosten/20152016/MAIII/STREEKPRODUCT/assets/img/dot.png');
+	background-image: url('/assets/img/dot.png');
 	background-repeat: no-repeat;
 	background-position: center bottom;
 	height: 294px;
@@ -271,7 +280,7 @@ canvas{
 
 /*   RECEPTEN   */
 .klaarmaken{
-	background-image: url('/elise.van.oosten/20152016/MAIII/STREEKPRODUCT/assets/img/klaarmaken.png');
+	background-image: url('/assets/img/klaarmaken.png');
 	width: 555px;
 	height: 371px;
 	margin: 50px auto;
@@ -337,8 +346,15 @@ canvas{
 }
 
 .hide{
-	height: 0;
+	max-height: 0;
 	overflow: hidden;
+	transition: max-height 1s ease-out;
+}
+
+.show{
+	max-height: 500px;
+	overflow: auto;
+	transition: max-height 1s ease-out;
 }
 
 .mini-info{
@@ -362,7 +378,7 @@ canvas{
 	margin: 0 auto;
 }
 .verkoop-header{
-	background-image: url('/elise.van.oosten/20152016/MAIII/STREEKPRODUCT/assets/img/verkoop_header.png');
+	background-image: url('/assets/img/verkoop_header.png');
 	margin: 20px auto;
 	width: 447px;
 	height: 447px;
@@ -413,22 +429,22 @@ canvas{
 }
 
 .postel h1{
-	background-image: url('/elise.van.oosten/20152016/MAIII/STREEKPRODUCT/assets/img/postel_txt.png');
+	background-image: url('/assets/img/postel_txt.png');
 	width: 282px;
 	height: 53px;
 }
 .averbode h1{
-	background-image: url('/elise.van.oosten/20152016/MAIII/STREEKPRODUCT/assets/img/averbode_txt.png');
+	background-image: url('/assets/img/averbode_txt.png');
 	width: 286px;
 	height: 25px;
 }
 .koningshoeven h1{
-	background-image: url('/elise.van.oosten/20152016/MAIII/STREEKPRODUCT/assets/img/koningshoeven_txt.png');
+	background-image: url('/assets/img/koningshoeven_txt.png');
 	width: 406px;
 	height: 25px;
 }
 .colruyt h1{
-	background-image: url('/elise.van.oosten/20152016/MAIII/STREEKPRODUCT/assets/img/colruyt_txt.png');
+	background-image: url('/assets/img/colruyt_txt.png');
 	width: 226px;
 	height: 25px;
 }
@@ -441,19 +457,19 @@ canvas{
 }
 
 .plaats{
-	background-image: url('/elise.van.oosten/20152016/MAIII/STREEKPRODUCT/assets/img/plaats.png');
+	background-image: url('/assets/img/plaats.png');
 }
 .klok{
-	background-image: url('/elise.van.oosten/20152016/MAIII/STREEKPRODUCT/assets/img/klok.png');
+	background-image: url('/assets/img/klok.png');
 }
 .telefoon{
-	background-image: url('/elise.van.oosten/20152016/MAIII/STREEKPRODUCT/assets/img/telefoon.png');
+	background-image: url('/assets/img/telefoon.png');
 }
 .kok{
-	background-image: url('/elise.van.oosten/20152016/MAIII/STREEKPRODUCT/assets/img/kok.png');
+	background-image: url('/assets/img/kok.png');
 }
 .persoon{
-	background-image: url('/elise.van.oosten/20152016/MAIII/STREEKPRODUCT/assets/img/persoon.png');
+	background-image: url('/assets/img/persoon.png');
 }
 
 /*   FOOTER   */
@@ -461,14 +477,14 @@ canvas{
 footer{
 	width: 100%;
 	height: 100px;
-	background-image: url('/elise.van.oosten/20152016/MAIII/STREEKPRODUCT/assets/img/background.jpg');
+	background-image: url('/assets/img/background.jpg');
 	background-color: #02858a;
 	background-blend-mode: multiply;
 	background-size: cover;
 }
 
 .streekproduct{
-	background-image: url('/elise.van.oosten/20152016/MAIII/STREEKPRODUCT/assets/img/streekproduct.png');
+	background-image: url('/assets/img/streekproduct.png');
 	display: block;
 	width: 137px;
 	height: 137px;

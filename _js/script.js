@@ -8,48 +8,52 @@ import Etiketten from './classes/states/Etiketten';
 import End from './classes/states/End';
 
 let game;
-let recept;
 
 const init = () => {
-	if(document.getElementById('phaser-game')){
-		gameStart();
-	}
+  if(document.getElementById('phaser-game')){
+    gameStart();
+  }
 
-	if(document.querySelector('.scroll')){
-		scrollSmoothly();
-	}
+  if(document.querySelector('.scroll')){
+    scrollSmoothly();
+  }
 
   if(document.querySelector('.recept-detail')){
     receptHide();
   }
-
 };
 
 const gameStart = () => {
-	game = new Phaser.Game(900, 650, Phaser.AUTO, "phaser-game", null, true);
-	game.state.add('Preload', Preload, false);
-	game.state.add('Start', Start, false);
-	game.state.add('Koe', Koe, false);
-	game.state.add('Stremsel', Stremsel, false);
-	game.state.add('Pers', Pers, false);
-	game.state.add('Rijpen', Rijpen, false);
-	game.state.add('Etiketten', Etiketten, false);
-	game.state.add('End', End, false);
-	game.state.start('Preload');
-}
+  game = new Phaser.Game(900, 650, Phaser.AUTO, 'phaser-game', null, true);
+  game.state.add('Preload', Preload, false);
+  game.state.add('Start', Start, false);
+  game.state.add('Koe', Koe, false);
+  game.state.add('Stremsel', Stremsel, false);
+  game.state.add('Pers', Pers, false);
+  game.state.add('Rijpen', Rijpen, false);
+  game.state.add('Etiketten', Etiketten, false);
+  game.state.add('End', End, false);
+  game.state.start('Preload');
+};
 
 const receptHide = () => {
-  [].forEach.call(document.querySelectorAll(".toggle_recept"), function(link){
+  [].forEach.call(document.querySelectorAll('.toggle_recept'), function(link){
     link.addEventListener('click', toggleRecept);
-  })
-}
+  });
+};
 
 const toggleRecept = (event) => {
   event.preventDefault();
-  let receptDetail = event.currentTarget.parentNode.parentNode.parentNode.querySelector(".recept-detail")
-  receptDetail.classList.toggle("hide");
-  receptDetail.classList.toggle("show");
-}
+  let receptDetail = event.currentTarget.parentNode.parentNode.parentNode.querySelector('.recept-detail');
+  receptDetail.classList.toggle('hide');
+  receptDetail.classList.toggle('show');
+
+  if(event.currentTarget.innerHTML === 'Toon recept'){
+    event.currentTarget.innerHTML = 'Verberg recept';
+  }else if(event.currentTarget.innerHTML === 'Verberg recept'){
+    event.currentTarget.innerHTML = 'Toon recept';
+  }
+};
 
 const scrollSmoothly = () => {
   if ( 'querySelector' in document && 'addEventListener' in window && Array.prototype.forEach ) {
@@ -64,7 +68,7 @@ const scrollSmoothly = () => {
       var stopAnimation;
 
       var animateScroll = function () {
-      window.scrollBy(0, increments);
+        window.scrollBy(0, increments);
         stopAnimation();
       };
 
@@ -98,7 +102,6 @@ const scrollSmoothly = () => {
       }, false);
     });
   }
-}
-
+};
 
 init();
