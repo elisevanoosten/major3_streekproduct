@@ -65,6 +65,7 @@ body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background-image: url("/assets/img/background.jpg");
   background-size: contain;
+  background-attachement: fixed;
   color: #000706;
 }
 
@@ -212,7 +213,7 @@ main {
 
 .kaasmakerij {
   width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 50px auto;
 }
 
 .kaasmakerij div {
@@ -221,31 +222,33 @@ main {
   display: flex;
 }
 
+.kaasmakerij header {
+  margin-left: 60px;
+}
+
+.kaasmakerij img {
+  margin-top: -60px;
+  margin-left: -100px;
+}
+
 .echte_kaasmakerij {
   background-image: url("/assets/img/1vande3.png");
   width: 304px;
   height: 235px;
-  /*float: left;*/
 }
 
 .echte_kaasmakerij > span {
   display: none;
 }
 
-/*.pater_kaas{
-	position: relative;
-    left: -100px;
-    top: -45px;
-}*/
 .ontdek {
   background-image: url("/assets/img/interactief.png");
   background-repeat: no-repeat;
   display: block;
   width: 160px;
   height: 67px;
-  /*position: relative;*/
-  /*left: 90px;*/
-  /*top: -30px;*/
+  margin-left: 200px;
+  margin-top: -30px;
 }
 
 .ontdek > span {
@@ -362,7 +365,7 @@ main {
 /*   KAASTIPS   */
 /*   KAASPROCES   */
 canvas {
-  margin: 0 auto 110px auto;
+  margin: -45px auto 110px auto;
 }
 
 /*   RECEPTEN   */
@@ -370,7 +373,7 @@ canvas {
   background-image: url("/assets/img/klaarmaken.png");
   width: 555px;
   height: 371px;
-  margin: 0 auto;
+  margin: 50px auto;
 }
 
 .klaarmaken span {
@@ -384,62 +387,65 @@ canvas {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  /*justify-content: center;*/
   margin: 0 auto;
 }
 
-.recept-container-big article {
-  /*display: flex;*/
-  /*flex-direction: row-reverse;*/
-  /*align-items: center;*/
-}
-
 .recept-title {
-  font-size: 3em;
+  font-size: 4em;
   font-family: "bebas neue", helvetica, sans-serif;
-  width: 300px;
+  width: 380px;
   font-weight: bold;
+  color: #471c23;
+  margin-bottom: 20px;
 }
 
-.recept-item {
-  /*display: flex;
-	justify-content: flex-end;*/
-}
-
-.recept-item header {
+.recept-item > header {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  width: 250px;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  margin-right: 125px;
+  height: 300px;
 }
 
-.recept-item header img {
+.recept-item > header img {
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1;
 }
 
-.recept-item header div {
+.recept-item > header div {
   -webkit-order: 2;
   -ms-flex-order: 2;
   order: 2;
+  margin-left: -40px;
+}
+
+.recept-item > header a {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #471c23;
 }
 
 .recept-detail {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 500px;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  margin: -40px 0 40px 0;
 }
 
 .recept-detail h1 {
   font-weight: bold;
   font-size: 1.7em;
   text-decoration: underline;
-  /*margin-bottom: 20px;*/
 }
 
 .recept-detail ul {
@@ -451,22 +457,31 @@ canvas {
   line-height: 1.4em;
 }
 
+.hide {
+  height: 0;
+  overflow: hidden;
+}
+
 .mini-info {
+  font-size: 1.4em;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-align-items: baseline;
   -ms-flex-align: baseline;
   align-items: baseline;
-  -webkit-justify-content: space-around;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-  width: 397px;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 380px;
+  margin-top: 20px;
+  list-style-position: inside;
 }
 
-.mini-info li {
-  /*float: left;*/
-  margin-right: 20px;
+.bereiding {
+  /*flex-grow: 2;*/
+  width: 400px;
+  margin: 0 100px 0 60px;
 }
 
 /*   VERKOOPPUNTEN   */
@@ -477,7 +492,7 @@ canvas {
 
 .verkoop-header {
   background-image: url("/assets/img/verkoop_header.png");
-  margin: 0 auto;
+  margin: 20px auto;
   width: 447px;
   height: 447px;
 }
@@ -486,21 +501,18 @@ canvas {
   display: none;
 }
 
-.links {
-  float: left;
-}
-
-.rechts {
-  float: right;
-}
-
 .verkooppunt {
-  clear: both;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  /*clear: both;*/
 }
 
 .verkooppunt img {
-  position: relative;
-  top: -140px;
+  margin-top: -100px;
 }
 
 .verkooppunt span {
@@ -516,8 +528,33 @@ canvas {
   color: #000706;
 }
 
-.nextline {
-  padding-left: 42px;
+.postel div {
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+}
+
+.postel img {
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+}
+
+.koningshoeven div {
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+}
+
+.koningshoeven img {
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+}
+
+.colruyt {
+  margin-top: -100px;
+  margin-bottom: 100px;
 }
 
 .postel h1 {
@@ -544,24 +581,30 @@ canvas {
   height: 25px;
 }
 
+.image-list {
+  background-repeat: no-repeat;
+  line-height: 30px;
+  padding-left: 30px;
+}
+
 .plaats {
-  list-style-image: url("/assets/img/plaats.png");
+  background-image: url("/assets/img/plaats.png");
 }
 
 .klok {
-  list-style-image: url("/assets/img/klok.png");
+  background-image: url("/assets/img/klok.png");
 }
 
 .telefoon {
-  list-style-image: url("/assets/img/telefoon.png");
+  background-image: url("/assets/img/telefoon.png");
 }
 
 .kok {
-  list-style-image: url("/assets/img/kok.png");
+  background-image: url("/assets/img/kok.png");
 }
 
 .persoon {
-  list-style-image: url("/assets/img/persoon.png");
+  background-image: url("/assets/img/persoon.png");
 }
 
 /*   FOOTER   */

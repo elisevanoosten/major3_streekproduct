@@ -5,6 +5,7 @@ body {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	background-image: url('/assets/img/background.jpg');
 	background-size: contain;
+	background-attachement: fixed;
 	color: #000706;
 }
 
@@ -134,9 +135,16 @@ main{
 
 .kaasmakerij{
 	width: 600px;
-	margin: 0 auto;
+	margin: 0 auto 50px auto;
 	div{
 		display: flex;
+	}
+	header{
+		margin-left: 60px;
+	}
+	img{
+		margin-top: -60px;
+    	margin-left: -100px;
 	}
 }
 
@@ -144,17 +152,10 @@ main{
 	background-image: url('/assets/img/1vande3.png');
 	width: 304px;
 	height: 235px;
-	/*float: left;*/
 	>span{
 		display: none;
 	}
 }
-
-/*.pater_kaas{
-	position: relative;
-    left: -100px;
-    top: -45px;
-}*/
 
 .ontdek{
 	background-image: url('/assets/img/interactief.png');
@@ -162,9 +163,8 @@ main{
 	display: block;
 	width: 160px;
 	height: 67px;
-	/*position: relative;*/
-	/*left: 90px;*/
-    /*top: -30px;*/
+	margin-left: 200px;
+    margin-top: -30px;
 	>span{
 		display: none;
 	}
@@ -260,7 +260,7 @@ main{
 /*   KAASPROCES   */
 
 canvas{
-	margin: 0 auto 110px auto;
+	margin: -45px auto 110px auto;
 }
 
 /*   RECEPTEN   */
@@ -268,7 +268,7 @@ canvas{
 	background-image: url('/assets/img/klaarmaken.png');
 	width: 555px;
 	height: 371px;
-	margin: 0 auto;
+	margin: 50px auto;
 	span{
 		display: none;
 	}
@@ -278,46 +278,48 @@ canvas{
 .recept-container-big {
 	display: flex;
 	flex-direction: column;
-	/*justify-content: center;*/
 	margin: 0 auto;
-	article{
-		/*display: flex;*/
-		/*flex-direction: row-reverse;*/
-		/*align-items: center;*/
-	}
 }
 
 .recept-title{
-	font-size: 3em;
+	font-size: 4em;
 	font-family: "bebas neue", helvetica, sans-serif;
-	width: 300px;
+	width: 380px;
 	font-weight: bold;
+	color: #471c23;
+	margin-bottom: 20px;
 }
 
 .recept-item {
-	/*display: flex;
-	justify-content: flex-end;*/
-	header{
+	>header{
 		display: flex;
 		flex-direction: row;
-		width: 250px;
+		justify-content: flex-end;
+    	margin-right: 125px;
+    	height: 300px;
 		img{
 			order: 1;
 		}
 		div{
 			order: 2;
+			margin-left: -40px;
+		}
+		a{
+			font-size: 1.4em;
+			font-weight: bold;
+			color: #471c23;
 		}
 	}
 }
 
 .recept-detail{
 	display: flex;
-	width: 500px;
+	justify-content: flex-end;
+	margin: -40px 0 40px 0;
 	h1{
 		font-weight: bold;
 		font-size: 1.7em;
 		text-decoration: underline;
-		/*margin-bottom: 20px;*/
 	}
 	ul{
 	    margin: 20px 0;
@@ -328,15 +330,25 @@ canvas{
 	}
 }
 
+.hide{
+	height: 0;
+	overflow: hidden;
+}
+
 .mini-info{
+	font-size: 1.4em;
 	display: flex;
 	align-items: baseline;
-	justify-content: space-around;
-    width: 397px;
-	li{
-		/*float: left;*/
-		margin-right: 20px;
-	}
+	justify-content: space-between;
+    width: 380px;
+    margin-top: 20px;
+    list-style-position: inside;
+}
+
+.bereiding{
+	/*flex-grow: 2;*/
+	width: 400px;
+	margin: 0 100px 0 60px;
 }
 
 /*   VERKOOPPUNTEN   */
@@ -346,7 +358,7 @@ canvas{
 }
 .verkoop-header{
 	background-image: url('/assets/img/verkoop_header.png');
-	margin: 0 auto;
+	margin: 20px auto;
 	width: 447px;
 	height: 447px;
 	span{
@@ -354,19 +366,12 @@ canvas{
 	}
 }
 
-.links{
-	float: left;
-}
-
-.rechts{
-	float: right;
-}
-
 .verkooppunt{
-	clear: both;
+	display: flex;
+	justify-content: center;
+	/*clear: both;*/
 	img{
-		position: relative;
-		top: -140px;
+		margin-top: -100px;
 	}
 	span{
 		display: none;
@@ -380,8 +385,27 @@ canvas{
 	}
 }
 
-.nextline{
-	padding-left: 42px;
+.postel{
+	div{
+		order: 2;
+	}
+	img{
+		order: 1;
+	}
+}
+
+.koningshoeven{
+	div{
+		order: 2;
+	}
+	img{
+		order: 1;
+	}
+}
+
+.colruyt{
+	margin-top: -100px;
+	margin-bottom: 100px;
 }
 
 .postel h1{
@@ -406,21 +430,26 @@ canvas{
 }
 
 
+.image-list{
+	background-repeat: no-repeat;
+    line-height: 30px;
+    padding-left: 30px;
+}
 
 .plaats{
-	list-style-image: url('/assets/img/plaats.png');
+	background-image: url('/assets/img/plaats.png');
 }
 .klok{
-	list-style-image: url('/assets/img/klok.png');
+	background-image: url('/assets/img/klok.png');
 }
 .telefoon{
-	list-style-image: url('/assets/img/telefoon.png');
+	background-image: url('/assets/img/telefoon.png');
 }
 .kok{
-	list-style-image: url('/assets/img/kok.png');
+	background-image: url('/assets/img/kok.png');
 }
 .persoon{
-	list-style-image: url('/assets/img/persoon.png');
+	background-image: url('/assets/img/persoon.png');
 }
 
 /*   FOOTER   */
